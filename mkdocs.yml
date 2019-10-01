@@ -1,0 +1,36 @@
+---
+site_name: Phil's Site
+site_url: https://predatorian3.github.io
+site_description: Phil's site for things
+site_author: Phillip <Predatorian3@gmail.com>
+repo_name: predatorian3.github.io
+repo_url: https://github.com/predatorian3/predatorian3.github.io
+copyright: 'Copyright &copy 2019 Phillip Dudley'
+docs_dir: docs
+theme:
+  name: material
+  palette:
+    primary: 'light green'
+    accent: 'blue grey'
+  logo: 'img/logo.png'
+  favicon: 'img/logo.png'
+  lang: en
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - sane_lists
+  - codehilite:
+      linenums: true
+  - footnotes
+  - meta
+plugins:
+  - search:
+      lang: en
+extra:
+  social:
+    - type: github
+      link: https://github.com/Predatorian3
+    - type: twitter
+      link: https://twitter.com/fil_bot3
+...
