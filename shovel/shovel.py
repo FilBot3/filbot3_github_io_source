@@ -25,7 +25,10 @@ def ghpages():
     Seems you'll need to have an SSH Key with either no password, or loaded into
     an ssh-agent of some sort.
     """
+    import datetime
+    os.system("""python -m mkdocs build""")
     os.chdir("../predatorian3.github.io/")
-    os.system("""python -m mkdocs gh-deploy \
-      --config-file ../predatorian3_github_io_source/mkdocs.yml \
-      --remote-branch master""")
+    os.system("""git add .""")
+    right_now = datetime.date.today().ctime()
+    os.system(f"""git commit -m 'Built on {right_now}'""")
+    os.system("""git push origin master""")
