@@ -42,7 +42,7 @@ def ghpgswin():
     import datetime
     os.system("""python -m mkdocs build""")
     os.chdir("../filbot3.github.io/")
-    os.system("""Copy-Item -Path ..\filbot3_github_io_source\site\* -Filter *.* -Recurse -Destination .\ -Container -Force""")
+    os.system("""Copy-Item -Path ..\filbot3_github_io_source\site\* -Filter *.* -Recurse -Destination .\ -Container -Force -Exclude ..\filbot3_github_io_source\.git\*""")
     right_now = datetime.date.today().ctime()
     os.system("""git add .""")
     os.system(' '.join(("git commit -m 'Built on'", right_now)))
