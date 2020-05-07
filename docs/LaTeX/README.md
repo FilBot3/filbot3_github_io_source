@@ -49,6 +49,19 @@ Now if you have any custom fonts, the way I had this working was to place those 
 
 Inside that directory stucture has the font packages, and in this case, the OpenType Fonts usually ending in `.otf`. Run `mktexlsr` for TexLive to recognize your new fonts. I had to then use `xelatex` or `lualatex`. Something about how those compilers work and how they read packages. If you're not doing anything funky with fonts or `.otf` files, then the plain `pdflatex` should suite you just fine.
 
+## Using `kpsewhich`
+
+Something that helps me when trying to script or figure out where certain
+variables are for LaTeX is to use the `kpsewhich` program provided with TexLive.
+You can use this like
+
+* `kpsewhich -var-value=TEXMFHOME`
+
+to find out where TexLive is looking for certain variables. Using the TexLive
+docs to find out where those are are not fairly obvious to me, so I linke them
+here: [TexLive Predefined texmf trees](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html#x1-110002.3). There you'll see a bunch of them. The ones listed
+in prior parts of this page, will also work here.
+
 ## Bonus
 
 If you're feeling froggy, you can use something like Ruby's Guard Gem and have it watch your TeX source files and recompile when you save your work.
