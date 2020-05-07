@@ -28,7 +28,22 @@ def ghpages():
     import datetime
     os.system("""python -m mkdocs build""")
     os.chdir("../filbot3.github.io/")
-    os.system("""git add .""")
+    os.system("""cp -R ../filbot3_github_io_source/site/* ./""")
     right_now = datetime.date.today().ctime()
+    os.system("""git add .""")
     os.system(f"""git commit -m 'Built on {right_now}'""")
+    os.system("""git push origin master""")
+
+
+@task
+def ghpgswin():
+    """Because windows sucks.
+    """
+    import datetime
+    os.system("""python -m mkdocs build""")
+    os.chdir("../filbot3.github.io/")
+    os.system("""Copy-Item -Path ..\filbot3_github_io_source\site\* -Filter *.* -Recurse -Destination .\ -Container -Force""")
+    right_now = datetime.date.today().ctime()
+    os.system("""git add .""")
+    os.system(' '.join(("git commit -m 'Built on'", right_now)))
     os.system("""git push origin master""")

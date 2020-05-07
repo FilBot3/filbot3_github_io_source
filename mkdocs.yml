@@ -12,7 +12,6 @@ theme:
   palette:
     primary: 'light green'
     accent: 'blue grey'
-  logo: 'img/logo.png'
   favicon: 'img/logo.png'
   lang: en
 markdown_extensions:
@@ -27,10 +26,4 @@ markdown_extensions:
 plugins:
   - search:
       lang: en
-extra:
-  social:
-    - type: github
-      link: https://github.com/FilBot3
-    - type: twitter
-      link: https://twitter.com/fil_bot3
 ...
